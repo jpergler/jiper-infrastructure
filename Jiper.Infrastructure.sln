@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiper.Infrastructure", "src\Jiper.Infrastructure\Jiper.Infrastructure.csproj", "{4E272145-2FDC-4660-94AF-160B4540ADED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiper.Infrastructure.Handlers", "src\Jiper.Infrastructure.Handlers\Jiper.Infrastructure.Handlers.csproj", "{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{4E272145-2FDC-4660-94AF-160B4540ADED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E272145-2FDC-4660-94AF-160B4540ADED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E272145-2FDC-4660-94AF-160B4540ADED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
