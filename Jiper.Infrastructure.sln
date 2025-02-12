@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiper.Infrastructure", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiper.Infrastructure.Handlers", "src\Jiper.Infrastructure.Handlers\Jiper.Infrastructure.Handlers.csproj", "{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiper.Infrastructure.Handlers.RavenDB", "src\Jiper.Infrastructure.Handlers.RavenDB\Jiper.Infrastructure.Handlers.RavenDB.csproj", "{A992C83D-C8B2-4EF8-8EC9-88D0B6BE4813}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD585E4F-BE6F-4FDA-B87F-B7293133BC6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A992C83D-C8B2-4EF8-8EC9-88D0B6BE4813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A992C83D-C8B2-4EF8-8EC9-88D0B6BE4813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A992C83D-C8B2-4EF8-8EC9-88D0B6BE4813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A992C83D-C8B2-4EF8-8EC9-88D0B6BE4813}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
