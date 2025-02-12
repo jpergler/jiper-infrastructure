@@ -8,15 +8,15 @@ public abstract class RavenUseCaseQueryHandler<TUseCase, TResult>(IDocumentStore
     where TUseCase : IUseCase<TResult>
 {
     protected IAsyncDocumentSession Session { get; private set; } = null!;
-    
-    public async Task<TResult> Handle(TUseCase request, CancellationToken cancellationToken)
+
+    public async Task<TResult> Execute(TUseCase useCase, CancellationToken cancellationToken)
     {
         Session = store.OpenAsyncSession();
-        
-        return await ExecuteQuery(request, Session, cancellationToken);
+
+        return await ExecuteQuery(useCase, cancellationToken);
     }
 
-    protected abstract Task<TResult> ExecuteQuery(TUseCase useCase, IAsyncDocumentSession session, CancellationToken ct = default);
+    protected abstract Task<TResult> ExecuteQuery(TUseCase useCase, CancellationToken ct = default);
 
     public void Dispose()
     {

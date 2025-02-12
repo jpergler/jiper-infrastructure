@@ -9,16 +9,16 @@ public abstract class RavenUseCaseCommandHandler<TUseCase>(IDocumentStore docume
 {
     protected IAsyncDocumentSession Session { get; private set; } = null!;
 
-    public async Task Handle(TUseCase request, CancellationToken cancellationToken)
+    public async Task Execute(TUseCase useCase, CancellationToken cancellationToken)
     {
         Session = documentStore.OpenAsyncSession();
 
-        await ExecuteCommand(request, Session, cancellationToken);
+        await ExecuteCommand(useCase, cancellationToken);
 
         await Session.SaveChangesAsync(cancellationToken);
     }
 
-    protected abstract Task ExecuteCommand(TUseCase useCase, IAsyncDocumentSession session, CancellationToken ct = default);
+    protected abstract Task ExecuteCommand(TUseCase useCase, CancellationToken ct = default);
 
     public void Dispose()
     {
@@ -32,18 +32,18 @@ public abstract class RavenUseCaseCommandHandler<TUseCase, TResult>(IDocumentSto
 {
     protected IAsyncDocumentSession Session { get; private set; } = null!;
 
-    public async Task<TResult> Handle(TUseCase request, CancellationToken cancellationToken)
+    public async Task<TResult> Execute(TUseCase useCase, CancellationToken cancellationToken)
     {
         Session = documentStore.OpenAsyncSession();
 
-        var result = await ExecuteCommand(request, Session, cancellationToken);
+        var result = await ExecuteCommand(useCase, cancellationToken);
 
         await Session.SaveChangesAsync(cancellationToken);
 
         return result;
     }
 
-    protected abstract Task<TResult> ExecuteCommand(TUseCase useCase, IAsyncDocumentSession session, CancellationToken ct = default);
+    protected abstract Task<TResult> ExecuteCommand(TUseCase useCase, CancellationToken ct = default);
 
     public void Dispose()
     {

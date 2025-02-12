@@ -11,16 +11,18 @@ public interface IUseCase<out TResponse>
 {
 }
 
-public interface IUseCaseHandler<in TUseCase>
-    : IRequestHandler<TUseCase>
+public interface IUseCaseHandler<in TUseCase> : IRequestHandler<TUseCase>
     where TUseCase : IUseCase
 {
+    Task Execute(TUseCase useCase, CancellationToken ct = default);
+    Task IRequestHandler<TUseCase>.Handle(TUseCase useCase, CancellationToken ct) => Execute(useCase, ct);
 }
 
-public interface IUseCaseHandler<in TUseCase, TResponse>
-    : IRequestHandler<TUseCase, TResponse>
-    where TUseCase : IUseCase<TResponse>
+public interface IUseCaseHandler<in TUseCase, TResult> : IRequestHandler<TUseCase, TResult>
+    where TUseCase : IUseCase<TResult>
 {
+    Task<TResult> Execute(TUseCase useCase, CancellationToken ct = default);
+    Task<TResult> IRequestHandler<TUseCase, TResult>.Handle(TUseCase useCase, CancellationToken ct) => Execute(useCase, ct);
 }
 
 public interface IUseCaseExecutor
